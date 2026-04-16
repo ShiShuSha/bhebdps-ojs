@@ -6,20 +6,20 @@ tooltips.forEach(el => {
   el.addEventListener('click', (e) => {
     e.preventDefault();
 
-    // Если уже есть активная подсказка — удаляем
+    // если уже есть активная подсказка удаляем
     if (activeTooltip) {
       activeTooltip.remove();
       activeTooltip = null;
     }
 
-    // Создаём новую подсказку
+    // создаём новую подсказку
     const tooltip = document.createElement('div');
     tooltip.className = 'tooltip tooltip_active';
     tooltip.textContent = el.getAttribute('title');
 
     document.body.appendChild(tooltip);
 
-    // Позиционирование
+    // позиционирование
     const rect = el.getBoundingClientRect();
 
     tooltip.style.left = rect.left + 'px';
